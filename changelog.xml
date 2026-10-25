@@ -1,1 +1,3561 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<changelogs>
+		<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>1.0.0</version>
+		<change>
+			<item>First stable release — migrate Joomla 3 / K2 to native Joomla 6 articles</item>
+			<item>Browser flow: Database → Media → Preparation → Convert → Check → Rollback</item>
+			<item>Resumable batches and incremental import/media while the legacy site stays live</item>
+			<item>Preserved IDs; Prep conflict remaps; pilot sample then full Convert</item>
+			<item>Bulk Convert + resumable asset densify proven at ~230k articles / large media</item>
+			<item>en-GB and el-GR administrator UI</item>
+		</change>
+		<note>
+			<item>Stable public production release — 2026-10-25</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+			<item>Use a clean offline destination; SELECT-only source DB; see README and DISCLAIMER</item>
+		</note>
+	</changelog>
 
+		<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc101</version>
+		<change>
+			<item>Fix: Prep alias sample Keep/Peer columns match newest-kept Apply rules</item>
+			<item>Fix: Make unique visible after Verify finishes (alias_review_required gate)</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+		<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc100</version>
+		<change>
+			<item>Fix: Prep Create categories no longer flatten missing-parent children under ROOT</item>
+			<item>Prep: Repair category parents from staging for already-flattened trees</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc99</version>
+		<change>
+			<item>Fix: items Dry-run no longer false BLOCK_GENERATION vs Item Preflight fingerprint</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc98</version>
+		<change>
+			<item>Convert: missing K2 XL → fallback image or blank (no phantom paths)</item>
+			<item>Sample Check: missing image files are not a blocker</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc97</version>
+		<change>
+			<item>Fix: Check sample unlocks after Convert sample (heal no longer wipes sample ids mid-run)</item>
+			<item>Recover pilot sample markers from completed sample job on Convert page load</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc96</version>
+		<change>
+			<item>Fix: Make unique global dest-cat occupancy (no new alias conflicts while fixing)</item>
+			<item>Fix: Convert Item Preflight FAILs on any alias conflict (raw or effective)</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc95</version>
+		<change>
+			<item>Fix: Make unique no longer clears hub snapshot (avoids raw-dup reopen loop)</item>
+			<item>Fix: alias suffix stem strips -N (no …-2-2)</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc94</version>
+		<change>
+			<item>Fix: Make unique dest-cat occupancy (no leftover Preflight duplicate across remaps)</item>
+			<item>Prep Items: Make unique again + manual rename when Preflight leftover remains</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc93</version>
+		<change>
+			<item>Fix: Items Verify auto-start loop after completed scan + live alias-quality overlay</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc92</version>
+		<change>
+			<item>Convert: optional K2-mode image fallback when size file is missing on disk</item>
+			<item>Media job summary includes missing (distinct from skipped)</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc91</version>
+		<change>
+			<item>Media scale: ledger_floor_id, fast/strict verify, K2 resume size, source_updated, CLI memory handoff</item>
+			<item>Incremental import warnings: skipped_missing_tag_xref, orphan_catid_items</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc89</version>
+		<change>
+			<item>Site images copy allowlist: PDF, ZIP/Office docs, MP3 (+ related) — still no php/exe</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc88</version>
+		<change>
+			<item>Check scan: time-budgeted pages + batched ownership (no Cloudflare 524 stall on large sites)</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc87</version>
+		<change>
+			<item>Foreign alias fix: sync dest from staging after Make unique; live owner resolve; clear stale Preflight</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc86</version>
+		<change>
+			<item>Alias conflicts keep newest; auto -2/-3 on older; one-click foreign collision suffix</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc85</version>
+		<change>
+			<item>Preflight blockers show titles/aliases; Prep panel is explanation-first without jump buttons</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc84</version>
+		<change>
+			<item>Prep mirrors Convert Preflight blockers + rename staging item alias; hub no longer Convert-ready while Preflight blocks</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc83</version>
+		<change>
+			<item>Incremental: keep Item Preflight valid; ignore false alias conflicts on already-converted items</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc82</version>
+		<change>
+			<item>Convert actions: last successful conversion under Tags/Menus/Items + AJAX done flash</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc81</version>
+		<change>
+			<item>Convert hub job line live-updates from AJAX (no stale created 0)</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc80</version>
+		<change>
+			<item>Convert items progress: no false densify @ 99% mid-run; show N/expected</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc79</version>
+		<change>
+			<item>Convert hub: job id + sample-of-N; supersede old finished jobs; soft heal cancels all completed</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc78</version>
+		<change>
+			<item>Global Convert Rollback no longer wipes pilot PASS/Unlock (only soft heal)</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc77</version>
+		<change>
+			<item>Rollback soft heal: keep pilot/preflight/hub; do not force Safety test restart</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc76</version>
+		<change>
+			<item>Purge orphan com_tags.tag.* assets before Convert tag create (idx_asset_name)</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc75</version>
+		<change>
+			<item>Prep Step 7 fixed image mode saves reliably (RAW media POST + keep prior paths)</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc74</version>
+		<change>
+			<item>Heal must not cancel running Convert sample; re-pin preflight after own Convert writes</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc73</version>
+		<change>
+			<item>Purge Convert SKIP leftovers after Clear; stop false “matching destination” from staging titles</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc72</version>
+		<change>
+			<item>Heal must not cancel fresh item preflight on empty ledger; live preflight overlays hub</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc71</version>
+		<change>
+			<item>Convert checklist/pilot banner use live gate; heal stale unlocked hub snapshot</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc70</version>
+		<change>
+			<item>Convert Clear resets Convert hub jobs + pilot gate; heal stale UI when ledger empty</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc69</version>
+		<change>
+			<item>Heal pre-rc68 username/email fixes into durable overrides (Undo receipt → hub inventory)</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc68</version>
+		<change>
+			<item>Prep hub inventory for durable corrections (aliases + user username/email)</item>
+			<item>User username/email fixes are durable and re-applied after Full Import</item>
+			<item>Step 5: fix Limit is 0, live conflict overlay, Recheck restarts diagnosis</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc67</version>
+		<change>
+			<item>Convert clear skips body LOB hashing (editorial fingerprint only) — was slower than Full import</item>
+			<item>CLI rollback larger batches (1000 default when time-limit ≥15s) + --batch / --force-edited</item>
+		</change>
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc66</version>
+
+		<change>
+			<item>Soft P2: Check map-aware Convert ownership + bounded orphan article assets</item>
+			<item>SqlUpsertDialect for densify/eff-alias upserts; drop Category getError()</item>
+			<item>Make unique clean only on zero failures; invalidate alias cache after Import/remap</item>
+			<item>CLI command frames with Copy button + site-root instruction</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc65</version>
+
+		<change>
+			<item>Copy-paste CLI command blocks on Database, Media, Convert, Check, Rollback</item>
+			<item>CLI --time-limit accepts 30s / 5000ms suffixes</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc64</version>
+
+		<change>
+			<item>Convert clear ownership body hash computed in SQL (no LOB pull to PHP)</item>
+			<item>Cancel Clear articles/tags/menus job; banner no longer shows stale deleted count</item>
+			<item>CLI rollback default 30s ticks via --time-limit</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc63</version>
+
+		<change>
+			<item>Ops backup acknowledgement status reads fresh Extension params (no stale _system cache)</item>
+			<item>Ack form also available on Rollback; return stays on the same view</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+			<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc62</version>
+
+		<change>
+			<item>Rollback Convert button renamed to Clear articles / tags / menus</item>
+			<item>Clear Prep users / categories for disposable retest after Convert clear</item>
+			<item>Prep Create journals users/categories for ownership clear</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc61</version>
+
+		<change>
+			<item>Pin Convert admission identity on first tick; refuse mid-admission drift</item>
+			<item>Incremental orphan xref filter only for new articles (no global purge)</item>
+			<item>Two no-progress memory pauses on the same tuple become a permanent skip</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc60</version>
+
+		<change>
+			<item>Prep category/item alias corrections survive Import (full) and are re-applied after reload</item>
+			<item>Same destination user ID with the same email counts as Match even when username differs</item>
+			<item>Import skips orphan tags_xref whose tag is missing from staged tags; Clear still wipes overrides</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc59</version>
+
+		<change>
+			<item>Database Clear / Full / Incremental buttons show short captions of what each does</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc58</version>
+
+		<change>
+			<item>Clear temporary tables wipes staging and Prep ID rules; Import (full) reloads data but keeps remaps</item>
+			<item>Pilot/Preflight structural fingerprint so Incremental articles do not force a new Sample when Prep is clean</item>
+			<item>Database UI documents Clear vs Full vs Incremental clearly</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc57</version>
+
+		<change>
+			<item>Incremental Database import after a full load brings only new K2 articles and their tag links</item>
+			<item>Users, categories, menus and other structural staging are no longer refreshed on Incremental</item>
+			<item>Database page states the cutover contract (full once, then article-only follow-ups)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc56</version>
+
+		<change>
+			<item>SQL ingest pauses under memory pressure instead of permanently skipping small rows as oversized</item>
+			<item>Database skipped list shows table and reason (oversize / memory / truncated)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc55</version>
+
+		<change>
+			<item>Preparation and Convert open immediately; diagnosis runs in bounded browser batches</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc54</version>
+
+		<change>
+			<item>Check media paths ignore #joomlaImage fragments so existing files are not false positives</item>
+			<item>Dashboard shows recommended PHP, PHP-FPM, and database settings for large migrations</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc53</version>
+
+		<change>
+			<item>Resumable Check renders its report status table immediately while browser batches run</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc52</version>
+
+		<change>
+			<item>Check paints immediately and completes large-site reports through durable browser batches</item>
+			<item>Skip samples show source titles and the originating successful Convert run</item>
+			<item>Convert documents recommended PHP, PHP-FPM, and database settings for large migrations</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc51</version>
+
+		<change>
+			<item>Convert and Rollback asset densify now resume and complete through durable browser batches</item>
+			<item>Convert progress exposes densify phases and explains skipped items with counts and sample IDs</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc50</version>
+
+		<change>
+			<item>Full Convert: split pilot, preflight, asset-capacity, and identity admission into separate resumable progress ticks</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc49</version>
+
+		<change>
+			<item>Full Convert tags/items: paint progress first, then run safety checks and writes in resumable AJAX ticks</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc48</version>
+
+		<change>
+			<item>Pilot Unlock: fresh persisted state enables Convert actions immediately and focuses the next step</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc47</version>
+
+		<change>
+			<item>Pilot Unlock: paused historical jobs no longer suppress the current fingerprint after sample PASS</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc46</version>
+
+		<change>
+			<item>Convert: immediate progress paint via deferred identity checks; memoized fingerprints; tag-xref index</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc45</version>
+
+		<change>
+			<item>Convert sample: fast grouped selector; deferred tag/item jobs with AJAX progress; tags run first</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc44</version>
+
+		<change>
+			<item>Prep hub: heal Items alias snapshot from completed Make unique/Verify; Verify start keeps cache</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc43</version>
+
+		<change>
+			<item>Prep Items: no auto Verify after Make unique; trusted_clean snapshot survives Recheck</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc42</version>
+
+		<change>
+			<item>Prep Items: chunked AJAX progress for Verify + Make unique scan (eff-alias spill table; Cloudflare-safe)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc41</version>
+
+		<change>
+			<item>Prep Items large-site: defer effective-alias scan to AJAX Verify; fast page load; Dry-run uses cache</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc40</version>
+
+		<change>
+			<item>Prep hub: Items Convert-ready only after effective-alias verify (no false ready on large sites)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc39</version>
+
+		<change>
+			<item>Prep Items: effective-alias quality (Convert rules) on Items drill-in; Prep Tags orphan xref cleanup + Undo</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc38</version>
+
+		<change>
+			<item>Prep Items alias dedupe progress labels: renamed (not deleted); clarify groups vs rows</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc37</version>
+
+		<change>
+			<item>Prep Items: Make aliases unique Apply as AJAX job with progress bar</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc36</version>
+
+		<change>
+			<item>Prep Items large-site: defer duplicate-alias samples to AJAX (avoid Cloudflare 524)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc35</version>
+
+		<change>
+			<item>Prep Items: show duplicate-alias samples when capped (category, keep/peer titles + created)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc34</version>
+
+		<change>
+			<item>Prep Items: Make staging aliases unique (dedupe) with Dry-run + Undo</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc33</version>
+
+		<change>
+			<item>Prep: surface Convert blockers (staging dup aliases, empty titles, orphan cats, tag xref) — no false Convert-ready</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc32</version>
+
+		<change>
+			<item>Convert UX: Preflight progress in Step 1; failed checks with fix hints; less duplicate actions</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc31</version>
+
+		<change>
+			<item>Convert safety test: Preflight is Step 1; sample gated until Preflight is current</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc30</version>
+
+		<change>
+			<item>Convert: clear 3-step safety-test UX (sample → check → unlock)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc29</version>
+
+		<change>
+			<item>Prep hub: Active Prep ID rules (idmap) moved below step cards</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc28</version>
+
+		<change>
+			<item>Prep Menus hub optional (never blocks Convert); prefer DIY menus with legacy aliases for old URLs</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc27</version>
+
+		<change>
+			<item>Prep Menus: Remap diagnosis respects idmap; Undo remap; Home excluded from Create/Convert</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc26</version>
+
+		<change>
+			<item>Prep hub Media: manual mode counts as ready (not Needs action)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc25</version>
+
+		<change>
+			<item>Prep fixed images: strip joomlaImage media-field suffix on save</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc24</version>
+
+		<change>
+			<item>Prep Items: Cancel job fully stops bulk delete/remap (unlike Pause)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc23</version>
+
+		<change>
+			<item>Prep Categories: destination math excludes foreign-extension PK conflicts</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc22</version>
+
+		<change>
+			<item>Prep Categories: bulk remap all ID conflicts (foreign PKs / title mismatch)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc21</version>
+
+		<change>
+			<item>Prep Categories: foreign-extension #__categories PKs need Remap, not Create</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc20</version>
+
+		<change>
+			<item>Prep Categories: title match = Match after Create alias transliteration</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc19</version>
+
+		<change>
+			<item>Prep Categories: hide Delete when clean; Undo controls stay visible</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc18</version>
+
+		<change>
+			<item>Prep Categories: change staging alias for alias clashes; Destination only math help</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc17</version>
+
+		<change>
+			<item>Prep Categories Solutions Delete includes alias-clash / destination-only IDs</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc16</version>
+
+		<change>
+			<item>Prep Categories: alias clash diagnosis includes staging vs destination; Create blocked</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc15</version>
+
+		<change>
+			<item>Prep Categories: remapped-away dest IDs show under Destination only</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc14</version>
+
+		<change>
+			<item>Prep Categories refuse duplicate aliases; trashed hard-delete via Prep Delete</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc13</version>
+
+		<change>
+			<item>Prep hub idmap rules inventory + Clear remaps; category Create Nested/alias fix</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc12</version>
+
+		<change>
+			<item>Prep Categories: auto idmap remap IDs, scoped Undo delete/remap, correct help text</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc11</version>
+
+		<change>
+			<item>Prep Users: Undo fixes remains after Apply clears username/email blocks</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc10</version>
+
+		<change>
+			<item>Prep Users Fix Apply: per-row conflict messages (ID + field + dest user)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc9</version>
+
+		<change>
+			<item>Prep Users Fix staging: only clashing username/email fields editable</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc8</version>
+
+		<change>
+			<item>Prep: remove cross-step generic Undo; scoped Undo access / Undo author</item>
+			<item>Access/Author Apply use delta undo tables (works on large staging)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc7</version>
+
+		<change>
+			<item>Prep Create users: optional common password + Enabled/Disabled for new users</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc6</version>
+
+		<change>
+			<item>Prep Users: Undo fixes (scoped) beside identity Apply; gray until fixes applied</item>
+			<item>Prep Users Apply fixes rejects destination username/email clashes</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc5</version>
+
+		<change>
+			<item>Prep Items: Undo remap gray until Apply remap; no misleading generic Undo</item>
+			<item>Prep item bulk Remap Dry-run/Apply: job + progress bar (≤10000)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc4</version>
+
+		<change>
+			<item>Prep item Dry-run: job + progress bar (batch walk, no long single wait)</item>
+			<item>Apply/Dry start use diagnosis conflict_total hint (skip blocking COUNT)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc3</version>
+
+		<change>
+			<item>Prep item Dry-run delete: COUNT(*) instead of loading all conflict IDs</item>
+			<item>Clarify UI: progress bar on Apply job only; Dry-run is instant count</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc2</version>
+
+		<change>
+			<item>Prep: gray bulk Remap when conflicts &gt; 10000 + strong delete warning</item>
+			<item>Prep item bulk delete: job ticks + progress bar (shared-hosting safe)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+			<item>0.3.0 A–D does not transfer — re-run A–D on this SHA before calling stable</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-rc1</version>
+
+		<change>
+			<item>Media Undo: journal destination orig_mtime (not source publish mtime)</item>
+			<item>Undo restore clock prefers backup mtime, then journaled orig_mtime</item>
+			<item>First 0.3.1 release candidate for real-clone / large-data rehearsal</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+			<item>0.3.0 A–D does not transfer — re-run A–D on this SHA before calling stable</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha30</version>
+
+		<change>
+			<item>record-evidence.php: reproducible evidence envelope + installed_version</item>
+			<item>verify-evidence: relative paths; harness via --harness / DKM_QA_HARNESS_REPORT</item>
+			<item>qa-gate: generic version-consistency; stop rewriting historical pins</item>
+			<item>Media Undo restore: prefer atomic rename (unlink only as fallback)</item>
+			<item>Docs: run-record placeholders; current-state/quick-start densify wording</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha29</version>
+
+		<change>
+			<item>expected-assertions.integration.json: pin ConvertIntegrationHarness prefixes</item>
+			<item>verify-evidence requires ≥26 PASS / zero FAIL / prefix coverage</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha28</version>
+
+		<change>
+			<item>ExecutorWriterCoupledFixtureTest: real Executor + bulk writers (items/tags)</item>
+			<item>Fixtures: commit-ACK loss and oversize singleton refusal cases</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha27</version>
+
+		<change>
+			<item>Media Undo: verified temp restore + restore_inflight durable flag</item>
+			<item>Media Undo: cleanup retry after orig digest; backup preserves mtime</item>
+			<item>Prep Undo: editorial stamp before Tags/UCM projection</item>
+			<item>Evidence path qa/evidence/; verify-evidence rejects empty payload</item>
+			<item>Prep Create Undo documented as accepted narrower promise</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha26</version>
+
+		<change>
+			<item>verify-evidence: fail loudly on empty harness scenario ID parse</item>
+			<item>Dashboard quick-start hint with sprintf file links</item>
+			<item>README lists rehearsal checklist + CLI</item>
+			<item>run-record example refreshed to 0.3.1-alpha25 SHA</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha25</version>
+
+		<change>
+			<item>Quick-start: host sizing, Convert rates, exit/status tree, cutover, SEO</item>
+			<item>Dashboard quick-start hint for clone operators</item>
+			<item>Evidence tooling: verify-evidence + rehearsal/release docs (Sonnet K1)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha24</version>
+
+		<change>
+			<item>ExecutorWriterCatchFixtureTest: live writer throws + return ok=false mutation probe</item>
+			<item>Docs: promote requires --sample; Convert preflight after Import/Prep</item>
+			<item>acceptance-a-d: separate unchecked 0.3.1 residual checklist</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha23</version>
+
+		<change>
+			<item>Ambiguous media destinations pin durable recovery_required (no endless resume)</item>
+			<item>Media Undo verifies restore digest, restores backup mtime, requires cleanup before consume</item>
+			<item>Copy-run Undo pin scans up to 100 terminal jobs</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha22</version>
+
+		<change>
+			<item>Prep Delete Undo restores frontpage ordering with featured schedule</item>
+			<item>Prep item Undo re-applies modified/modified_by after Content::store()</item>
+			<item>Legacy receipts without _prep_native still restore editorial timestamps</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha21</version>
+
+		<change>
+			<item>Media listing paused/requires_cli resumes the same job on CLI under lease</item>
+			<item>Browser returns MEDIA_REQUIRES_CLI and must not spawn a second Media run</item>
+			<item>CLI uses a larger listing wall-clock budget for large site-images trees</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha20</version>
+
+		<change>
+			<item>Pending tombstone reconcile checks staging absence and dest mapping before trash</item>
+			<item>Source reappeared / mapping changed → eligibility_conflict, zero stores</item>
+			<item>Tombstone intents store source_id for eligibility retries</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha19</version>
+
+		<change>
+			<item>Operator quick-start guide for clone destinations (docs/quick-start.md)</item>
+			<item>Pilot flags --sample/--check/--promote/--rollback-run documented from ConvertCommand</item>
+			<item>README and ops-guide link the quick-start path</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha18</version>
+
+		<change>
+			<item>Functional regressions assert tags and items Executor catch chains independently</item>
+			<item>Mutation probe fails when items recovery catch message is stripped</item>
+			<item>Harness scenario ID snapshot for J1: docs/expected-assertions.harness.json</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha17</version>
+
+		<change>
+			<item>Media listing prep respects HTTP wall-clock (soft defer; stalled listing → requires_cli)</item>
+			<item>Stale manifest purge is budgeted across ticks (images_phase=purge)</item>
+			<item>K2 empty-dir cleanup fences skipped files and directoryHasFiles probes</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha16</version>
+
+		<change>
+			<item>Prep Delete Undo restores item tags, workflow stage, frontpage, and article asset ACL</item>
+			<item>Prep category Delete Undo restores captured category asset rules</item>
+			<item>Prep Create Undo documented as not delivered (Create remains immediate destination state)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha15</version>
+
+		<change>
+			<item>Media publish verifies temp SHA-256 against journaled pub_sha256 before rename</item>
+			<item>Post-rename dest digest must match intent; drift → publish_incomplete</item>
+			<item>source_digest_mismatch counter for source change after ledger intent</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha14</version>
+
+		<change>
+			<item>Pending tombstone intents store ownership fingerprint at journal time</item>
+			<item>Reconcile re-checks live ownership before trash / already-trashed finalize</item>
+			<item>Local edit after intent → ownership_conflict, receipt retained</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha13</version>
+
+		<change>
+			<item>Pilot checklist no longer blocks first HTTP Sample via ready</item>
+			<item>Full Convert still gated by assertFullConvertAllowed + hub fullAllowed</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha12</version>
+
+		<change>
+			<item>Production ZIP omits ConvertIntegrationHarness + IntegrationTestCommand</item>
+			<item>Package postflight purges harness orphans after install/update</item>
+			<item>run-integration-convert.php overlays repo harness for QA then removes it</item>
+			<item>Acceptance/ops document lean package + overlay evidence</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha11</version>
+
+		<change>
+			<item>FunctionalRegressionPathsTest: writer→caller recovery/packet vs fallback</item>
+			<item>Media ACK / tombstone pending / paused CLI / Prep Undo regression paths</item>
+			<item>run-record.example.json keyed to 0.3.0 stable; 0.3.1 does not inherit A–D</item>
+			<item>acceptance-a-d + current-state synced for post-stable evidence rules</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha10</version>
+
+		<change>
+			<item>Destination admission: bounded owners SUM/XOR (id:alias:catid:state)</item>
+			<item>SQL dump fingerprints include ctime/inode; sampled identity declared</item>
+			<item>identityContract() + ops-guide Identity / completeness certainty table</item>
+			<item>Not delivered: exact whole-file SQL dump identity</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha9</version>
+
+		<change>
+			<item>Cold media listing admits RAM before collecting directory names</item>
+			<item>Refused filenames counted as unsupported_paths (visible, not silent)</item>
+			<item>CHILD_FIRST empty-dir cleanup without lexicographic cursor mismatch</item>
+			<item>Batched manifest stale purge; ledger/manifest INSERT packet byte caps</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha8</version>
+
+		<change>
+			<item>Honest Not delivered status (session password, SSL CA/verify, spill-only clean)</item>
+			<item>convert-engine-design / benchmarks synced to bulk OP_CREATE + OP_FINALIZE</item>
+			<item>scripts/check-docs.php version and docs consistency checks</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha7</version>
+
+		<change>
+			<item>Convert readiness includes pilot gate blockers and checklist row</item>
+			<item>convert_require_pilot=0 bypass records convert_pilot_bypass_at / count</item>
+			<item>Ops guide pilot section; acceptance requires pilot path + integration harness evidence</item>
+			<item>Integration harness uses CLI sync preflight (same as ConvertCommand)</item>
+			<item>DKM_CRASH_INJECTED rethrows without failing the job (in-process resume)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha6</version>
+
+		<change>
+			<item>Convert UI warns when site is online and when densify job is paused (requires_cli)</item>
+			<item>Ops guide: Site Offline during Convert; CLI resume of the same paused densify job</item>
+			<item>convert-engine-design documents bulk destination assets exception (no legacy import)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha5</version>
+
+		<change>
+			<item>CLI resumes paused Convert/rollback densify via CAS paused→running (same checkpoint)</item>
+			<item>createUnlessRunning blocks on paused; HTTP keeps requires_cli without a second job</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha4</version>
+
+		<change>
+			<item>Pending sync_tombstone intents reconciled before terminal (already-trashed no longer orphaned)</item>
+			<item>Tombstone Undo refuses subsequent edits; consumes already-restored receipts</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha3</version>
+
+		<change>
+			<item>Media ACK resume reuses valid before-image; already-landed pub hash completes ACK</item>
+			<item>Edited/ambiguous destinations stay recovery-required (no infinite materializeBackup stall)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha2</version>
+
+		<change>
+			<item>Prep article Undo verifies body + bound asset; repairs incomplete owned rows before consume</item>
+			<item>Prep category Undo matches ownership/description/asset (no bare-ID restored shortcut)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.1-alpha1</version>
+
+		<change>
+			<item>ConvertBulkTagWriter: singleton admission before PENDING; lost COMMIT ACK → recovery-required</item>
+			<item>Tags Executor: typed packet refusal without row fallback (parity with articles)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0</version>
+
+		<change>
+			<item>First stable release after operator A–D + fault acceptance on alpha202</item>
+			<item>Version cut only; update stream tag set to stable</item>
+		</change>
+
+		<note>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha202</version>
+
+		<change>
+			<item>GPT α200 residual groups #1–#11: identity, import, Prep/Menu/tombstone Undo, assets, COMMIT, media, packet, verifier, inventory</item>
+			<item>Typed packet refusal and HTTP densify requires_cli pause; media manifest generation column</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha201</version>
+
+		<change>
+			<item>SqlUpsertDialect pins alias vs legacy from server version and component params</item>
+			<item>MySQL ≥ 8.0.19 never falls back to deprecated VALUES(column); MariaDB pins legacy</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-rc4</version>
+
+		<change>
+			<item>Release candidate after operator A–D PASS on alpha200 (version cut only)</item>
+			<item>Root update.xml / changelog.xml publish-path metadata fixed (SHA + Joomla schema)</item>
+			<item>A–D of alpha200 transfers when packaged payload differs only by version strings</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha200</version>
+
+		<change>
+			<item>Same-artifact A–D candidate after GPT rc3 audit #1–#16</item>
+			<item>No new features — operator acceptance on this immutable SHA</item>
+			<item>See docs/acceptance-a-d.md</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha199</version>
+
+		<change>
+			<item>SqlUpsertDialect: VALUES(col) only when INSERT…AS alias syntax is unsupported</item>
+			<item>Deadlock/permission/network faults rethrow (no dialect fallback)</item>
+			<item>Preflight, media manifest, K2 staging, idmap share the gate</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha198</version>
+
+		<change>
+			<item>SqlPacketBudget never inflates above 70% of real max_allowed_packet</item>
+			<item>Item/tag/UCM packers refuse oversize singleton rows before mutation</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha197</version>
+
+		<change>
+			<item>Manifest generation pin + stale inventory purge after walk</item>
+			<item>Listing cache v3: UTF-8 refusal, sort-key validation, memory admission</item>
+			<item>K2 empty-dir Undo cleanup time-budgeted and resumable</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha196</version>
+
+		<change>
+			<item>Convert start admits projected #__assets against memory_limit before writes</item>
+			<item>CLI rebuildTick shares long PREPARE wall budget (PHP_SAPI=cli)</item>
+			<item>Permanent RAM refusal terminal-fails Convert/rollback densify (no endless retry)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha195</version>
+
+		<change>
+			<item>UCM core_* from installed content_types.field_mappings</item>
+			<item>Bulk create resolves category parent via categories.asset_id + name check</item>
+			<item>Asset densify verifier: missing parent, wrong level, crossing siblings</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha194</version>
+
+		<change>
+			<item>Independent live expected COUNT vs staging; duplicates are not shortfall</item>
+			<item>Fail-closed reject ledger with locator + source fingerprint</item>
+			<item>Resolve rejects on successful replay; readiness gates generation backlog</item>
+			<item>Atomic xref upsert+cleanup transaction + zero-tag queue</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha193</version>
+
+		<change>
+			<item>Every-tick Convert pin validation; refuse unpinned legacy jobs</item>
+			<item>Stronger idmap fingerprint; SQL dump mid-file sample</item>
+			<item>Destination admission fingerprint on cached preflight PASS</item>
+			<item>Collation-native alias collision probes (no CAST AS BINARY)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha192</version>
+
+		<change>
+			<item>Bulk Prep Undo consumes receipt only after all snapshots restore</item>
+			<item>Partial success rewrites remaining snapshots; no prune of unfinished receipts</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha191</version>
+
+		<change>
+			<item>Atomic remap delta + required history (GPT rc3 audit #3): replaceRemaps runs deactivate/history/upsert in one transaction</item>
+			<item>Single-row upsert requires history inside a transaction; bulk can join an outer TX</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha190</version>
+
+		<change>
+			<item>Conservative Convert rollback (GPT rc3 audit #7): refuse empty/malformed ownership fingerprints; body/modified/version digest</item>
+			<item>Bound leaf asset delete; UCM-base purge errors retryable; failed row keeps ledger in range; expired budget with no query keeps more=true</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha189</version>
+
+		<change>
+			<item>Prep Menu Undo / remap / rebuild repair (GPT rc3 audit #5): remap cascade rewrites type=alias Itemid/aliasoptions</item>
+			<item>Create journals owned IDs + prior home flags for Undo; nested-set rebuild after partial insert fault; durable rebuild_pending resume</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha188</version>
+
+		<change>
+			<item>Prep Undo partial receipt (GPT rc3 audit #4): bulk delete Undo consumes a receipt only after every snapshot restores</item>
+			<item>Partial success rewrites the remaining receipt; no prune of unfinished action-undo rows; idempotent already-restored destinations</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha187</version>
+
+		<change>
+			<item>ConvertRecoveryRequiredException on uncertain bulk SQL rollback acknowledgement</item>
+			<item>Executor fails closed without per-row fallback or cursor advance</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha186</version>
+
+		<change>
+			<item>Ledger path: keep relative images/ folders; strip only K2 site-root prefixes</item>
+			<item>Undo pins newest copy run with receipts (incl. cancelled/failed); refuse on scope failure</item>
+			<item>Journal published=false until atomic publish; resume unpublished before cursor advance</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-rc3</version>
+
+		<change>
+			<item>Removed duplicate PREP_MENU_ERROR_EMPTY keys (en-GB / el-GR)</item>
+			<item>validate.php rejects duplicate .ini language keys</item>
+			<item>Re-run acceptance A–D on this artifact before stable</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-rc2</version>
+
+		<change>
+			<item>Release candidate after operator A–D PASS on alpha185</item>
+			<item>Feature freeze; version cut only (no product code changes)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha185</version>
+
+		<change>
+			<item>Acceptance A–D protocol tied to one artifact SHA; run-record JSON example</item>
+			<item>Ops guide: integer CLI flags, scoped --convert-job vs global Convert rollback, assets/densify clarity</item>
+			<item>Rollback --convert-job help and Convert engine note clarified</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha184</version>
+
+		<change>
+			<item>Package preflight refuses PHP &lt; 8.3 and Joomla &lt; 6 before installer writes</item>
+			<item>Preparation media form via FormFactory; Table store without getError()</item>
+			<item>Query setLimit instead of deprecated setQuery(query, offset, limit)</item>
+			<item>Preflight alias upsert prefers INSERT … AS new row alias</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha183</version>
+
+		<change>
+			<item>JobRepository::update is CAS on expected status (cancel cannot be overwritten)</item>
+			<item>Dry-run await-preflight re-reads parent; cancelled child is not auto-replaced</item>
+			<item>job-batch.js per-request generation: stale abort/finally cannot stack fetches</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha182</version>
+
+		<change>
+			<item>Preflight fast COUNTs phased one-per-tick; duplicate finalize COUNT+LIMIT samples</item>
+			<item>CLI/sync Convert use durable runToCompletion (not full scanItems)</item>
+			<item>Shared SqlPacketBudget for bulk/UCM INSERT packing</item>
+			<item>Prep category/menu create stops between chunks on HTTP wall budget</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha181</version>
+
+		<change>
+			<item>Densify reparents broken nodes under canonical ROOT (never parent_id=0 second roots)</item>
+			<item>VERIFY: single ROOT, unique lft/rgt, max(rgt)=2n, parent containment</item>
+			<item>Bulk UCM resolves ucm_language_id; refuses missing core/tag rows</item>
+			<item>Pilot verify: category asset pointer, UCM content/base, article asset parent</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha180</version>
+
+		<change>
+			<item>Job create uses createUnlessRunning only; gone-away reconciles, never blind insertObject</item>
+			<item>Bulk article/tag writers: failed transactionRollback → recovery-required (no mutation retry)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha179</version>
+
+		<change>
+			<item>Dry-run never truncates/writes shared media_manifest (direct source walk)</item>
+			<item>Listing cache version-sealed with complete/count validation</item>
+			<item>Unreadable directories fail the job; paths over 512 chars refused</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha178</version>
+
+		<change>
+			<item>New #__devartk2migration_import_rejects table for durable import skips</item>
+			<item>recordSkippedLarge writes every reject beyond UI job-JSON sample caps</item>
+			<item>Completeness syncs rejects_durable + sample; unresolved → completed_with_errors</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha177</version>
+
+		<change>
+			<item>Source connector/query failures fail the job (never silent EOF/completed)</item>
+			<item>Pin path + K2 item backend + connection dataset fingerprint on resume</item>
+			<item>Conflicts → completed_with_errors; AJAX exposes missing/conflicts; sanitized last_error</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha176</version>
+
+		<change>
+			<item>K2 XL preexisting files use the same skip/backup policy as site images</item>
+			<item>K2 ledger paths normalized under images/; Undo restores K2 preexisting backups</item>
+			<item>Media Undo pins copy run_id and ledger high-watermark (later runs untouched)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha175</version>
+
+		<change>
+			<item>Revalidate source/destination immediately before each media publish</item>
+			<item>Journal plans backup path before materialize (journal-before-backup)</item>
+			<item>Store pub_sha256; Undo preserves edited destinations and recognizes already-restored</item>
+			<item>K2 destination guard runs before mkdir; flush respects batch deadline</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha174</version>
+
+		<change>
+			<item>Prep action Undo consumes receipt only after verified restore (failed store stays retriable)</item>
+			<item>Article/category restore checks Table::store() return</item>
+			<item>Bulk item delete always snapshots before-images in memory-safe chunks</item>
+			<item>Category create runs nested-set rebuild after mid-run chunk failure</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha173</version>
+
+		<change>
+			<item>Finalize/conflict plan COUNTs use EXISTS (duplicate pending receipts no longer fan out)</item>
+			<item>create+conflict+finalize conservation — inconsistent totals refuse dry-run ok</item>
+			<item>Destination alias collision checks every foreign owner id, not only the lowest</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha172</version>
+
+		<change>
+			<item>replaceRemaps keeps unchanged frozen remaps; refuses change/removal of frozen rows</item>
+			<item>Bulk upsertRemaps: duplicate source/dest refused, transactional chunks, required history, syntax-only AS-new fallback</item>
+			<item>allocationFloor sequential when Convert raises native MAX into the reserved band</item>
+			<item>Tag ROOT clash uses effective idmap destination (source 1→9 is not a clash)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha171</version>
+
+		<change>
+			<item>staging_imported change detection runs before content column assignments (MariaDB left-to-right)</item>
+			<item>EOF completeness fails on any upserted→staging shortfall (not half-empty heuristic)</item>
+			<item>Incremental k2_tags_xref: upsert replacements first, then delete stale ids below watermark</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha170</version>
+
+		<change>
+			<item>Tombstones require clean Full import status completed only (not completed_with_errors); failed/completeness_failed must be zero</item>
+			<item>store_failed trash does not journal success — next tick can retry</item>
+			<item>Convert rollback refuses to hijack a running job for a different run_id scope (SCOPE_BUSY)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha169</version>
+
+		<change>
+			<item>JobRepository::create uses createUnlessRunning so gone-away retry cannot create a second running job</item>
+			<item>SQL-file source fingerprint includes mtime, size, and head+tail sample (same-path byte replacement detected)</item>
+			<item>K2 media live-source query exceptions fail the job — empty result no longer means completed EOF</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha168</version>
+
+		<change>
+			<item>MediaLedgerPayload normalizes paths under images/ (legacy images/k2migration/... no longer doubles to images/images/...)</item>
+			<item>K2 media rollback cleanup removes empty dirs only — no Folder::delete of residual/foreign files</item>
+			<item>Asset densify preserves restart counter across PREPARE→FLUSH so VERIFY churn can terminal-abort after &gt;3</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha167</version>
+
+		<change>
+			<item>Convert run_generation excludes destination #__content watermarks (no self-invalidation from own writes)</item>
+			<item>Prep/Convert menus: unresolved component links unpublished; template_style_id=0; foreign/alias reporting</item>
+			<item>HTTP menu create capped at 2000; rebuild failure warning; home-clear confirm; ops-guide Prep vs Rollback</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha166</version>
+
+		<change>
+			<item>Preparation Categories: Create missing block now renders after A (delete) and B (remap)</item>
+			<item>Preparation Menus: bulk create missing site menus after A/B with preserved IDs and source aliases</item>
+			<item>PrepMenuCreator rewrites com_k2 links like Convert; Convert menus skips rows already present</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-rc1</version>
+
+		<change>
+			<item>First release candidate after Pre-RC acceptance A–D on alpha165</item>
+			<item>Feature freeze; operator acceptance and ops guides under docs/</item>
+			<item>Same product surface as alpha165 (HTTP PREPARE bound, bulk remaps, P3 polish)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha165</version>
+
+		<change>
+			<item>HTTP densify PREPARE refuses when estimated wall time exceeds tick budget (A156-05); CLI rebuildAll bypasses</item>
+			<item>IdMapRepository bulk upsertRemaps with batched frozen/dest checks for Prep item auto-suggest</item>
+			<item>ConvertPlanner mb_strtolower; Convert skip path uses journal recordMany; JobRepository::create withAliveDb</item>
+			<item>Dry-run uses injected JobRepository; K2 media caches item source; getPreflight marked CLI-only</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha164</version>
+
+		<change>
+			<item>ConvertRunIdentity pins source fingerprint + admission generation; N-tick pin revalidation</item>
+			<item>Dry-run and preflight share run_generation (A156-03/04); resume refuses generation drift</item>
+			<item>upsertMany bumps staging_imported only when a tracked content column changes</item>
+			<item>Items dry-run summarize runs create/finalize/conflict COUNTs as separate HTTP sub-phases</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha163</version>
+
+		<change>
+			<item>Tombstone apply skips dest articles that no longer match Convert ownership fingerprint</item>
+			<item>Tombstones require Full import staging_fingerprint still matching current staging (A156-02)</item>
+			<item>Editorial sync edits use bounded scan windows (scan_cursor_id) to avoid full-table ticks</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha162</version>
+
+		<change>
+			<item>Ledger composite index (entity_type, action, entity_id) for tombstone/create scans</item>
+			<item>Incremental live import deletes stale k2_tags_xref rows per item below watermark</item>
+			<item>Media copy and Convert batch mark jobs failed on uncaught Throwable</item>
+			<item>createUnlessRunning prevents double-running jobs; preflight loops chunks until deadline</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha161</version>
+
+		<change>
+			<item>Media manifest fetchAfter uses utf8mb4_bin PK order without CAST (keeps index)</item>
+			<item>Media directory listing cache writes atomically (temp + rename) with UTF-8 substitute</item>
+			<item>Asset densify abort after restart&gt;3 terminals the job instead of infinite PREPARE loop</item>
+			<item>PREPARE overrun surfaces CLI densify hint on Convert progress</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha160</version>
+
+		<change>
+			<item>Site images and K2 media Undo run as resumable time-budgeted jobs (Cloudflare-safe)</item>
+			<item>K2 Undo is ledger-driven with empty-dir cleanup (legacy Folder::delete only if files remain)</item>
+			<item>Media copy micro-batches durable ledger INSERT (write-ahead groups of 50) before publish</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha159</version>
+
+		<change>
+			<item>Refuse site/K2 media publish when ledger insert fails (fail-closed journal)</item>
+			<item>Unique backup filenames for same-second replacements; Undo blocks older path ops after restore failure</item>
+			<item>Incremental live import watermarks k2_tags_xref after staging max id (new-only)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha158</version>
+
+		<change>
+			<item>materializeAliasChunk loads idmap only for chunk source ids (not full active maps)</item>
+			<item>preflight_alias alias varchar(255) with full (job_id, dest_cat, alias) index; single-pass duplicate GROUP BY</item>
+			<item>Purge stale alias work rows on preflight start and Clear temporary tables</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha157</version>
+
+		<change>
+			<item>HTTP Convert items requires a fingerprint-pinned completed batch preflight (no synchronous full scan)</item>
+			<item>continueConvert with job_id routes exclusively by job type (no preflight hijack)</item>
+			<item>Stale running preflight/dry-run (30 minutes) is cancelled instead of silently resumed</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha156</version>
+
+		<change>
+			<item>Defer first preflight/dry-run tick so Convert progress bar appears immediately</item>
+			<item>Dashboard step-by-step migration guide before the collection promo</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha155</version>
+
+		<change>
+			<item>Dry-run items/tags run as resumable HTTP batches (same checks as live, no writes)</item>
+			<item>Items dry-run reuses batched item preflight then planner summarize</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha154</version>
+
+		<change>
+			<item>Preflight flashes one line per check with counts (no duplicate keys)</item>
+			<item>On batch done: hide Pause / manual continue; sync Latest jobs status before reload</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha153</version>
+
+		<change>
+			<item>Run item preflight uses resumable HTTP batches + auto-continue (Cloudflare-safe)</item>
+			<item>Dashboard Options hub next to Rollback</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha152</version>
+
+		<change>
+			<item>Legacy K2 URLs title uses (.htaccess); drop Admin Tools wording</item>
+			<item>Apache .htaccess paste note + nginx rewrite snippet with copy</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha151</version>
+
+		<change>
+			<item>Remove Destination users (sample) accordion from Preparation hub and users step</item>
+			<item>Drop unused reservedUsers / getDestinationUsersSample helpers</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha150</version>
+
+		<change>
+			<item>Move status/warnings below hub cards</item>
+			<item>DevArt collection promo text (en-GB + el-GR)</item>
+			<item>DevArt News image under promo</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha149</version>
+
+		<change>
+			<item>Dashboard hubs matching Article Tools (icons, buttons, centered intro)</item>
+			<item>Source/media/preflight kept as secondary info cards</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha148</version>
+
+		<change>
+			<item>Page headers use native size (886×200 / 1200×324) with Article Tools responsive CSS</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha147</version>
+
+		<change>
+			<item>Centered responsive admin page headers from media images</item>
+			<item>Centered DevArt footer</item>
+			<item>DevArt red active submenu (Article Tools pattern)</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha146</version>
+
+		<change>
+			<item>Sync tombstone gate + OpsBackupAck</item>
+			<item>Media Undo LIFO/checksum/journal-before-copy; manifest scale</item>
+			<item>Densify whole-run PREPARE; alias candidate-only SQL</item>
+			<item>Import/Media fingerprint refuse; richer Convert pins</item>
+			<item>qa-importer-matrix in qa-gate; asset.json sync</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha144</version>
+
+		<change>
+			<item>Densify PREPARE yields on tick budget; memory admission before graph load</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha143</version>
+
+		<change>
+			<item>Hash-aware media preexisting + Undo restore from k2migration-backup; symlink path guard</item>
+			<item>DKM_CRASH_AFTER_BATCHES hook; scripts/qa-gate.php release gate</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha142</version>
+
+		<change>
+			<item>Memory guard 5×+12MB closes 64M OOM hole; media skip_conflict default + optional backup replace</item>
+			<item>Convert crash/idempotency and importer spill/memory contract tests</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha141</version>
+
+		<change>
+			<item>Ingest spill=maxTuple+1MB; memory guard skips instead of OOM fatal</item>
+			<item>Profile cache; densify keyset seq; online warning; rollback delete-edited option</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha140</version>
+
+		<change>
+			<item>Full Convert ownership fingerprint (title/created/author/language/access)</item>
+			<item>Rollback foreign_skipped compares expanded fingerprint; UI summaries</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha139</version>
+
+		<change>
+			<item>Resumable #__assets densify via work table + checkpointed flush ticks</item>
+			<item>Convert items / rollback resume densify across HTTP time budgets</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha138</version>
+
+		<change>
+			<item>Sync AJAX auto-loop + CLI; bulk Convert tags; adaptive performance profiles</item>
+			<item>Prep categories/tags large-site SQL counts; config performance profile + time budget</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha137</version>
+
+		<change>
+			<item>Lease re-verify after reconnect; cancel fences; contiguous Convert cursor; deadlock retry</item>
+			<item>Byte-budgeted upsertMany/UCM; live column fetch; worker file logs; preflight blockers + GET_LOCK</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha136</version>
+
+		<change>
+			<item>Dashboard host environment preflight; Convert INSERT byte packing; low-memory AssetNestedRebuild paging</item>
+			<item>SQL import EOF staging completeness; Convert prefetch + multi-row journal; CLI --workers item shards</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha135</version>
+
+		<change>
+			<item>Rollback keeps foreign_skipped ledger rows when live alias/catid no longer match Convert ownership</item>
+			<item>SQL ingest mid-tuple ticks guarantee at least 4MB scan before soft time-budget yield</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha134</version>
+
+		<change>
+			<item>Convert and Rollback re-plan within the same HTTP tick until the wall-clock budget is spent</item>
+			<item>Rollback uses AssetNestedRebuild and ownership checks before deleting journalled articles</item>
+			<item>AJAX job-batch backoff on repeated errors; client error messages strip filesystem paths</item>
+		</change>
+
+		<fix>
+			<item>SQL ingest pause/resume unit test executes the real shared pause policy from K2DatabaseImporter</item>
+		</fix>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha133</version>
+
+		<addition>
+			<item>Shared AJAX auto-continue for Convert, Media and Rollback (progress, Pause/Resume, proxy retry)</item>
+		</addition>
+
+		<change>
+			<item>Media batches are time-boxed (~2.8s) instead of a fixed 40-file click size</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha132</version>
+
+		<fixes>
+			<item>SQL ingest mid-tuple resume continues at scan_pos (fixes alpha129 row-loss regression under tight batch budgets)</item>
+		</fixes>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+			<item>Re-verify Database import row counts against the source dump after install</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha131</version>
+
+		<addition>
+			<item>Root update.xml and changelog.xml for GitHub-hosted Extension Manager updates</item>
+			<item>Package updateservers entry for joomla-devart-k2migration</item>
+		</addition>
+
+		<note>
+			<item>Pre-release (testing tag) — not a stable public production release</item>
+			<item>Install or update using the full pkg_devartk2migration package only</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+			<item>GitHub repository and release asset must exist before Extension Manager can fetch updates</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha130</version>
+
+		<change>
+			<item>Sample Convert OP_CREATE uses the same ConvertBulkItemWriter as full Convert</item>
+			<item>Preflight duplicate_alias uses effective destination category and stringURLSafe alias</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing) — install via ZIP until update server is published</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha129</version>
+
+		<fix>
+			<item>SQL ingest mid-tuple batch timeout no longer advances consumed or trims the parse buffer</item>
+		</fix>
+
+		<note>
+			<item>Pre-release (testing)</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha128</version>
+
+		<change>
+			<item>AssetNestedRebuild uses dense adjacency and iterative DFS with orphan/cycle reparent and post-verify</item>
+		</change>
+
+		<note>
+			<item>Pre-release (testing)</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+	<changelog>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<version>0.3.0-alpha127</version>
+
+		<fix>
+			<item>Bulk asset titles truncated to 100 characters</item>
+			<item>Bulk native writes plus CREATE journal in one InnoDB transaction without foreign planned-ID purge</item>
+			<item>Convert cursor advances only for durable executed source IDs</item>
+			<item>Densify failure keeps rebuild_assets and refuses terminal completion</item>
+			<item>Convert rollback covers pending and create ledger rows; cancelled jobs refuse further deletes</item>
+		</fix>
+
+		<note>
+			<item>Pre-release (testing)</item>
+			<item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+		</note>
+	</changelog>
+
+</changelogs>

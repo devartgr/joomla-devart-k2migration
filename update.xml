@@ -1,1 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+	<update>
+		<name>DevArt K2 Migration</name>
+		<description>DevArt K2 Migration — migrate legacy Joomla 3 / K2 content into clean Joomla 6 native articles</description>
+		<element>pkg_devartk2migration</element>
+		<type>package</type>
+		<client>site</client>
+		<version>1.0.0</version>
+		<infourl title="DevArt K2 Migration">https://github.com/devartgr/joomla-devart-k2migration</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-k2migration/releases/download/v1.0.0/pkg_devartk2migration_v1.0.0.zip</downloadurl>
+		</downloads>
+		<sha256>01456e8a3a8589ebdec6e327c059296341cbd02f9c91aee3f0af980380ee7d5e</sha256>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<changelogurl>https://raw.githubusercontent.com/devartgr/joomla-devart-k2migration/main/changelog.xml</changelogurl>
+		<targetplatform name="joomla" version="6.*"/>
+		<php_minimum>8.3.0</php_minimum>
+		<maintainer>Kostas Stathopoulos</maintainer>
+		<maintainerurl>https://devart.gr</maintainerurl>
+	</update>
+</updates>
 
